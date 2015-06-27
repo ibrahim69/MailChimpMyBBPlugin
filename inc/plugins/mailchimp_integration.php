@@ -24,6 +24,7 @@ function mailchimp() {
 		$fieldnum = $mybb->settings['mailchimp_field'];
 		$api_loc = $mybb->settings['mailchimp_apiadd'];
 		$confmsg = $mybb->settings['mailchimp_conf'];
+		$prefix = $mybb->settings['mailchimp_prefix'];
 		
 		$getuserinfo = $db->simple_select(
 			"users",
@@ -38,7 +39,7 @@ function mailchimp() {
 		$optinTIME = date('Y-m-d H:i:s');
 
 		if ($mybb->settings['mailchimp_opting']){
-			$useroptq = $db->query("SELECT fid" . $fieldnum . " FROM mybb_userfields WHERE ufid=" . $user_id . "");
+			$useroptq = $db->query("SELECT fid" . $fieldnum . " FROM " . $prefix ."userfields WHERE ufid=" . $user_id . "");
 			$user_opt = $db->fetch_array($useroptq, 'fid'. $fieldnum);
 			$user_opt = $user_opt['fid'. $fieldnum];
 		} else {
@@ -85,8 +86,8 @@ function mailchimp_integration_info(){
         "description"   => "Mailchimp",
         "website"       => "htttps://mailchimp.com",
         "author"        => "Desgyz",
-        "authorsite"    => "https://google.com",
-        "version"       => "1.0.2",
+        "authorsite"    => "https://github.com/desgyz",
+        "version"       => "1.0.3",
         "guid"      => "",
         "compatibility" => "*"
     );
@@ -118,7 +119,7 @@ function mailchimp_integration_activate(){
     $db->insert_query("settings", $settingOnOff);
 
 	
-	$settingOpting = array(
+        $settingOpting = array(
 		"sid" => "NULL",
 		"name" => "mailchimp_opting",
 		"title" => "Opt-In Setting",
@@ -165,6 +166,18 @@ function mailchimp_integration_activate(){
 		"gid" => intval($gid),
 	);
 	$db->insert_query("settings", $settingConfirmMessage);
+	
+	$settingPrefix = array(
+		"sid" => "NULL",
+		"name" => "mailchimp_prefix",
+		"title" => "Database Prefix",
+		"description" => "Database Prefix on your installation.",
+		"optionscode" => "text",
+		"value" => "mybb_",
+		"disporder" => "9",
+		"gid" => intval($gid),
+	);
+	$db->insert_query("settings", $settingOpting);
 	
 	/*
 	$settingDoubleOptin = array(
@@ -213,7 +226,7 @@ function mailchimp_integration_deactivate()
     $db->delete_query(
         "settings",
         "name IN(
-            'mailchimp_onoff', 'mailchimp_api', 'mailchimp_listid', 'mailchimp_opting', 'mailchimp_field', 'mailchimp_apiadd', 'mailchimp_conf'
+            'mailchimp_onoff', 'mailchimp_api', 'mailchimp_listid', 'mailchimp_opting', 'mailchimp_field', 'mailchimp_apiadd', 'mailchimp_conf', 'mailchimp_prefix'
         )"
     );
     rebuild_settings();
