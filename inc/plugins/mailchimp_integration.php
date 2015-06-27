@@ -83,7 +83,7 @@ $plugins->add_hook("member_do_register_end", "mailchimp");
 function mailchimp_integration_info(){
     return array(
         "name"          => "Mailchimp",
-        "description"   => "Mailchimp",
+        "description"   => "Mailchimp Plugon for MyBB",
         "website"       => "htttps://mailchimp.com",
         "author"        => "Desgyz",
         "authorsite"    => "https://github.com/desgyz",
@@ -184,7 +184,7 @@ function mailchimp_integration_activate(){
 		"disporder" => "9",
 		"gid" => intval($gid),
 	);
-	$db->insert_query("settings", $settingOpting);
+	$db->insert_query("settings", $settingPrefix);
 	
 	/*
 	$settingDoubleOptin = array(
