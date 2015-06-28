@@ -20,3 +20,13 @@ Please Read ALL Of the wiki before starting.
 For all bugs/issues read the wiki first.
 
 Last Update: 27/06/2015
+
+Copyright 2015 Desgyz
+
+	Permitted
+		 Commercial Use
+		 Private Use
+	Forbidden
+		 Distribution
+		 Modification
+		 Sublicensing
