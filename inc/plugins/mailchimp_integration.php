@@ -95,7 +95,7 @@ function mailchimp_integration_info(){
         "website"       => "htttps://mailchimp.com",
         "author"        => "Desgyz",
         "authorsite"    => "https://github.com/desgyz",
-        "version"       => "1.0.3",
+        "version"       => "1.0.4",
         "guid"      => "",
         "compatibility" => "*"
     );
