@@ -67,13 +67,13 @@ function mailchimp() {
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonnewmem);                                                                                                                  
 			$result = curl_exec($ch);	
-			/* print('Opt' . $user_opt);
+			print('Opt' . $user_opt);
 			print('success');
 			var_dump('Result'. $result);
 			print('loc' . $api_loc);
-			print('conf msg'. $confmsg); */
+			print('conf msg'. $confmsg);
 		} else {
-			/* var_dump($user_opt); */
+			var_dump($user_opt);
 		}
 	}
 }
@@ -95,7 +95,7 @@ function mailchimp_integration_info(){
         "website"       => "htttps://mailchimp.com",
         "author"        => "Desgyz",
         "authorsite"    => "https://github.com/desgyz",
-        "version"       => "1.0.3",
+        "version"       => "1.0.4",
         "guid"      => "",
         "compatibility" => "*"
     );
