@@ -7,7 +7,7 @@ Please Read ALL Of the wiki before starting.
 
 	Name: Mailchimp Integration Plugin 
 
-	Version: 1.0.3
+	Version: 1.0.4
 
 	Released: 23/06/2015
 
@@ -19,7 +19,7 @@ Please Read ALL Of the wiki before starting.
 	
 For all bugs/issues read the wiki first.
 
-Last Update: 27/06/2015
+Last Update: 08/07/2015
 
 Copyright 2015 Desgyz
 
