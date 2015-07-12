@@ -86,7 +86,7 @@ function mailchimp_integration_info(){
         "description"   =>  '
 	<p> Mailchimp Plugin for MyBB</p>
 
-	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank>
 		<input type="hidden" name="cmd" value="_donations">
 		<input type="hidden" name="business" value="michaelengelandreasen@gmail.com">
 		<input type="hidden" name="lc" value="AU">
