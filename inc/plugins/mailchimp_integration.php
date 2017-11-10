@@ -110,7 +110,7 @@ function mailchimp_integration_info(){
 function mailchimp_integration_activate(){
     global $db,$mybb;
     $settingsGroup = array(
-        "gid" => "NULL",
+        "gid" => "NULL", /* important, when instalation failed 1366 change NULL to 0 when instalation failed and repeat to NULL when instalation success */
         "name" => "mailchimp",
         "title" => "Mailchimp Integration",	
         "description" => "Enable or disable of MailChimp email delivery service integration.",
